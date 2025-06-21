@@ -1,0 +1,97 @@
+# Python-specific ignores
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.whl
+
+# Virtual environments
+venv/
+env/
+.venv/
+virtualenv/
+
+# Data directories (ignore large datasets, keep configs)
+data/raw/*
+data/processed/*
+data/external/*
+!data/*.yaml
+!data/*.json
+!data/*.csv
+
+# Model checkpoints and large files
+models/intent_classifier/*
+models/reply_generator/*
+models/tokenizer/*
+!models/*.json
+!models/*.yaml
+
+# Jupyter notebook checkpoints and temporary files
+notebooks/.ipynb_checkpoints/
+*.ipynb_checkpoints/
+
+# MLOps and deployment
+mlops/.cache/
+mlops/__pycache__/
+mlops/*.log
+mlops/*.pid
+mlops/*.seed
+mlops/*.pth
+mlops/*.tar.gz
+mlops/.docker/
+
+# Frontend build artifacts
+frontend/assets/build/
+frontend/assets/dist/
+frontend/assets/node_modules/
+frontend/assets/*.log
+
+# Logs and temporary files
+*.log
+*.log.*
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+*.DS_Store
+desktop.ini
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# GitHub Actions and CI/CD
+mlops/.github/workflows/*.log
+mlops/.github/workflows/*.cache
+
+# Tests and coverage
+.coverage
+coverage.xml
+*.cover
+htmlcov/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Miscellaneous
+*.bak
+*.swp
+*.swo
+*.zip
+*.tar.gz
+*.rar
+*.7z
