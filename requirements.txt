@@ -1,0 +1,31 @@
+# Core Libraries
+pandas                          # For data manipulation
+numpy                           # For numerical operations
+scikit-learn                    # For ML utilities (splitting, metrics)
+
+# NLP and Transformers
+transformers                    # Hugging Face models like DistilBERT, T5
+torch                           # PyTorch backend
+spacy                           # For entity extraction, tokenization
+sentencepiece                   # For T5 tokenizer support
+accelerate>=0.21.0              # For fast Transformer training
+
+# MLOps and Serving
+fastapi                         # API layer for model serving
+uvicorn[standard]               # ASGI server to run FastAPI
+pydantic                        # Data validation in FastAPI
+
+# UI Framework
+streamlit                       # Lightweight web UI for demo
+
+# Evaluation
+nltk                            # Tokenization + BLEU
+rouge-score                     # ROUGE metric implementation
+
+# Optional: XetHub for dataset/model versioning (if needed)
+hf_xet                          # XetHub extension for Hugging Face Datasets
+
+# Dev & Utils
+tqdm                            # Progress bars
+matplotlib                      # Optional: plotting metrics
+python-dotenv                   # For environment configs
