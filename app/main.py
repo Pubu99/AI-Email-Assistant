@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from schemas import EmailInput, PredictionResponse
-from predictor import predict_all
+from app.schemas import EmailInput, PredictionResponse
+from app.predictor import predict_all
 import uvicorn
 
 app = FastAPI(title="AI Email Assistant")
@@ -23,8 +23,11 @@ def read_root():
 # Prediction endpoint
 @app.post("/predict", response_model=PredictionResponse)
 def get_reply(input_data: EmailInput):
-    return predict_all(input_data.email)
+    result = predict_all(input_data.email)
+    print("DEBUG:", result)  # 👈 Add this
+    return PredictionResponse(**result)
+
 
 # Run backend
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run("main:app", host="localhost", port=8000, reload=True)

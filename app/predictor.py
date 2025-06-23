@@ -5,7 +5,7 @@ from transformers import (
     DistilBertTokenizerFast, DistilBertForSequenceClassification,
     T5Tokenizer, T5ForConditionalGeneration
 )
-from utils import extract_entities, build_prompt
+from app.utils import extract_entities, build_prompt
 
 # Device config
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

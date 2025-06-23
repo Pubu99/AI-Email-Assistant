@@ -13,6 +13,12 @@ def extract_entities(text):
     }
 
 def build_prompt(email_text: str, intent: str, entities: dict) -> str:
-    recipient = entities.get("PERSON", ["Unknown"])[0]
-    entity_str = " | ".join(f"{k}: {', '.join(v)}" for k, v in entities.items() if v) or "None"
+    persons = entities.get("PERSON", [])
+    recipient = persons[0] if persons else "Unknown"  # safe fallback
+
+    entity_str = " | ".join(
+        f"{k}: {', '.join(v)}" for k, v in entities.items() if v
+    ) or "None"
+
     return f"Intent: {intent} | RecipientName: {recipient} | Entities: {entity_str} | Email: {email_text}"
+
