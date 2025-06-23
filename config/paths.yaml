@@ -1,0 +1,5 @@
+raw_data: data/raw/emails.csv
+clean_data: data/processed/clean_emails.csv
+intent_model_dir: models/intent_classifier
+reply_model_dir: models/reply_generator
+tokenizers: models/tokenizer

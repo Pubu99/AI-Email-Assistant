@@ -1,21 +1,20 @@
-# Python-specific ignores
+# ==================== Python & Virtual Environments ====================
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
 .Python
 *.egg-info/
 dist/
 build/
 *.whl
 
-# Virtual environments
+# Virtual environment folders
 venv/
 env/
 .venv/
 virtualenv/
 
-# Data directories (ignore large datasets, keep configs)
+# ==================== Data ====================
+# Ignore large raw/processed datasets, allow configs
 data/raw/*
 data/processed/*
 data/external/*
@@ -23,18 +22,19 @@ data/external/*
 !data/*.json
 !data/*.csv
 
-# Model checkpoints and large files
+# ==================== Models ====================
+# Ignore model weights/checkpoints, allow configs
 models/intent_classifier/*
 models/reply_generator/*
 models/tokenizer/*
 !models/*.json
 !models/*.yaml
 
-# Jupyter notebook checkpoints and temporary files
+# ==================== Notebooks ====================
 notebooks/.ipynb_checkpoints/
 *.ipynb_checkpoints/
 
-# MLOps and deployment
+# ==================== MLOps & Deployment ====================
 mlops/.cache/
 mlops/__pycache__/
 mlops/*.log
@@ -44,13 +44,36 @@ mlops/*.pth
 mlops/*.tar.gz
 mlops/.docker/
 
-# Frontend build artifacts
-frontend/assets/build/
+# CI/CD artifacts
+mlops/.github/workflows/*.log
+mlops/.github/workflows/*.cache
+
+# ==================== Frontend ====================
+frontend/streamlit_app.py
 frontend/assets/dist/
 frontend/assets/node_modules/
 frontend/assets/*.log
 
-# Logs and temporary files
+# React/Node ignores for the root frontend folder (if any)
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+
+# React/Node ignores for the new React app specifically
+frontend/node_modules/
+frontend/build/
+frontend/.pnp/
+frontend/.pnp.js
+
+# npm/yarn logs in the React app folder
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# coverage folder (typical for React testing)
+frontend/coverage/
+
+# ==================== Logs & Temp Files ====================
 *.log
 *.log.*
 *.tmp
@@ -58,39 +81,29 @@ frontend/assets/*.log
 *.swp
 *.swo
 
-# OS-specific files
+# ==================== OS & Editor Files ====================
 .DS_Store
 Thumbs.db
-*.DS_Store
 desktop.ini
 
-# IDE and editor files
+# IDE-specific
 .vscode/
 .idea/
 *.sublime-project
 *.sublime-workspace
 
-# GitHub Actions and CI/CD
-mlops/.github/workflows/*.log
-mlops/.github/workflows/*.cache
+# ==================== Environment Variables ====================
+.env
+.env.*
+!.env.example
 
-# Tests and coverage
+# ==================== Tests & Coverage ====================
 .coverage
 coverage.xml
 *.cover
 htmlcov/
 
-# Environment files
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# Miscellaneous
-*.bak
-*.swp
-*.swo
+# ==================== Archives & Misc ====================
 *.zip
 *.tar.gz
 *.rar

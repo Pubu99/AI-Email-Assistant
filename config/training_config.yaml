@@ -1,0 +1,21 @@
+intent_classifier:
+  model_name: distilbert-base-uncased
+  epochs: 2
+  batch_size: 8
+  learning_rate: 5e-5
+
+reply_generator:
+  model_name: t5-small
+  epochs: 3
+  max_input_length: 512
+  max_target_length: 128
+
+data:
+  reply_csv: "data/processed/clean_emails.csv"
+paths:
+  reply_model_dir: "models/reply_generator"
+training:
+  sample_frac: 0.05
+  lr: 5e-5
+  batch_size: 8
+  epochs: 3
