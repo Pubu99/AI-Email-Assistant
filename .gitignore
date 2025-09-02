@@ -44,6 +44,12 @@ mlops/*.pth
 mlops/*.tar.gz
 mlops/.docker/
 
+# MLflow & DVC
+mlruns/
+dvc.lock
+.dvc/
+
+
 # CI/CD artifacts
 mlops/.github/workflows/*.log
 mlops/.github/workflows/*.cache
@@ -54,24 +60,59 @@ frontend/assets/dist/
 frontend/assets/node_modules/
 frontend/assets/*.log
 
+# Docker
+*.pid
+*.sock
+docker-compose.override.yml
+
+# Node/Frontend
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+frontend/.next/
+frontend/.cache/
+frontend/.env
+
+
 # React/Node ignores for the root frontend folder (if any)
 frontend/node_modules/
 frontend/build/
 frontend/dist/
 
 # React/Node ignores for the new React app specifically
+
+# Logs & Reports
+logs/
+*.log
+*.out
+*.coverage
+coverage.xml
+*.prof
+
 frontend/node_modules/
 frontend/build/
 frontend/.pnp/
 frontend/.pnp.js
 
+# VSCode & IDE
+.vscode/
+.idea/
+
+
 # npm/yarn logs in the React app folder
 frontend/npm-debug.log*
 frontend/yarn-debug.log*
+
+# Misc
+*.bak
+*.tmp
+*.orig
+
 frontend/yarn-error.log*
 
 # coverage folder (typical for React testing)
 frontend/coverage/
+
 
 # ==================== Logs & Temp Files ====================
 *.log

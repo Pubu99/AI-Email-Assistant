@@ -1,0 +1,57 @@
+version: "3.8"
+
+services:
+  # Main API service
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - model_data:/app/models
+    environment:
+      - MODEL_PATH=/app/models
+      - ENVIRONMENT=production
+    depends_on:
+      - mlflow
+
+  # MLflow tracking server
+  mlflow:
+    build:
+      context: .
+      dockerfile: mlflow.Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - mlflow_data:/mlflow
+    environment:
+      - MLFLOW_TRACKING_URI=sqlite:///mlflow.db
+
+  # Model training service
+  trainer:
+    build:
+      context: .
+      dockerfile: trainer.Dockerfile
+    volumes:
+      - .:/app
+      - model_data:/app/models
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+    depends_on:
+      - mlflow
+
+  # Frontend service
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://api:8000
+    depends_on:
+      - api
+
+volumes:
+  model_data:
+  mlflow_data:
