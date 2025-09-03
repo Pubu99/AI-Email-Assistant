@@ -29,3 +29,4 @@ hf_xet                          # XetHub extension for Hugging Face Datasets
 tqdm                            # Progress bars
 matplotlib                      # Optional: plotting metrics
 python-dotenv                   # For environment configs
+textblob
