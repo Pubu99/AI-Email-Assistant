@@ -30,8 +30,49 @@ docker-compose up --build
 
 ### 3. Local Development
 
-- Backend: `cd app && uvicorn main:app --reload`
-- Frontend: `cd frontend && npm install && npm start`
+1. Clone and navigate to the project:
+```bash
+git clone https://github.com/yourusername/AI-Email-Assistant.git
+cd AI-Email-Assistant
+```
+
+2. Create and activate virtual environment:
+```bash
+python -m venv venv
+.\venv\Scripts\activate
+```
+
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+python -m spacy download en_core_web_sm
+```
+
+4. Start the FastAPI server:
+```bash
+uvicorn app.main:app --reload
+```
+
+The API will be running at [http://localhost:8000](http://localhost:8000)
+
+### Frontend Setup
+
+1. Open a new terminal and navigate to frontend:
+```bash
+cd frontend
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start development server:
+```bash
+npm start
+```
+
+The app will open at [http://localhost:3000](http://localhost:3000)
 
 ---
 
