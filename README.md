@@ -1,4 +1,4 @@
-# 🤖 AI Email Assistant with MLOps
+# 🤖 AI-Powered Email Categorizer & Reply Generator
 
 An enterprise-grade AI-powered email assistant that automatically classifies email intents and generates contextual replies. Built with comprehensive MLOps practices including experiment tracking, model monitoring, drift detection, and automated deployment pipelines.
 
