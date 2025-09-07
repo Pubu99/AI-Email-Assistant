@@ -22,11 +22,47 @@ streamlit                       # Lightweight web UI for demo
 nltk                            # Tokenization + BLEU
 rouge-score                     # ROUGE metric implementation
 
+# MLOps Dependencies
+mlflow>=2.0.0                   # Experiment tracking and model registry
+dvc                             # Data version control
+dvc[s3]                         # S3 support for DVC (optional)
+evidently                       # Data drift detection
+scipy                           # Statistical tests for drift detection
+joblib                          # Model serialization
+PyYAML                          # YAML configuration files
+requests                        # HTTP requests for monitoring
+schedule                        # Task scheduling
+watchdog                        # File system monitoring
+psutil                          # System monitoring
+prometheus-client               # Metrics collection
+grafana-client                  # Grafana integration (optional)
+
+# Data Quality
+great-expectations              # Data validation and profiling
+pandera                         # DataFrame validation
+
+# Model Monitoring
+alibi-detect                    # Advanced drift detection
+whylogs                         # Data logging and profiling
+
+# Testing
+pytest                          # Testing framework
+pytest-cov                     # Coverage reporting
+hypothesis                      # Property-based testing
+
 # Optional: XetHub for dataset/model versioning (if needed)
 hf_xet                          # XetHub extension for Hugging Face Datasets
 
 # Dev & Utils
 tqdm                            # Progress bars
 matplotlib                      # Optional: plotting metrics
+seaborn                         # Enhanced plotting
 python-dotenv                   # For environment configs
-textblob
+black                           # Code formatting
+flake8                          # Code linting
+pre-commit                      # Git hooks
+
+# Deployment
+docker                          # Container support
+kubernetes                      # K8s client (optional)
+gunicorn                        # Production WSGI server
